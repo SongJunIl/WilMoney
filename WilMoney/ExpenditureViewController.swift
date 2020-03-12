@@ -8,8 +8,17 @@
 
 import UIKit
 
-class ExpenditureViewController: UIViewController {
+class ExpenditureViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var wonLabel: UILabel!
+    @IBOutlet weak var wonLabel2: UILabel!
+    @IBOutlet weak var wonLabel3: UILabel!
+    @IBOutlet weak var wonLabel4: UILabel!
+    @IBOutlet weak var wonLabel5: UILabel!
+    @IBOutlet weak var wonLabel6: UILabel!
+    @IBOutlet weak var wonLabel7: UILabel!
+    @IBOutlet weak var wonLabel8: UILabel!
+    @IBOutlet weak var wonLabel9: UILabel!
     /*고정 지출 아울렛*/
     @IBOutlet weak var expenditureNameField: UITextField!
     @IBOutlet weak var expenditureNameField1: UITextField!
@@ -56,26 +65,28 @@ class ExpenditureViewController: UIViewController {
     @IBOutlet weak var floatingExpenditurePriceLabel2: UILabel!
     @IBOutlet weak var floatingExpenditurePriceLabel3: UILabel!
     
-    var expenditureNameLabelArray = Array<UILabel>()
-    var expenditurePriceLabelArray = Array<UILabel>()
+    var expenditureTotalLabelArray = Array<UILabel>()
+    var expenditureTotalFieldArray = Array<UITextField>()
     
-    var expenditureNameFieldArray = Array<UITextField>()
-    var expenditurePriceFieldArray = Array<UITextField>()
+    var floatingExpendTotalLabelArray = Array<UILabel>()
+    var floatingExpendTotalFieldArray = Array<UITextField>()
     
-    var floatingExpenditureNameFieldArray = Array<UITextField>()
-    var floatingExpenditurePriceFieldArray = Array<UITextField>()
-    
-    var floatingExpenditureNameLabelArray = Array<UILabel>()
-    var floatingExpenditurePriceLabelArray = Array<UILabel>()
-    
-    var expenditureTotalLabelArray = Array<UIView>()
-    var expenditureTotalFieldArray = Array<UIView>()
-    
-    var floatingExpendTotalLabelArray = Array<UIView>()
-    var floatingExpendTotalFieldArray = Array<UIView>()
+    var wonLabelTotalArray = Array<UILabel>()
     override func viewDidLoad() {
         super.viewDidLoad()
-       initArray()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initArray()
+        
+         for textField in expenditureTotalFieldArray {
+             textField.delegate = self
+         }
+         for textField in floatingExpendTotalFieldArray {
+             textField.delegate = self
+         }
     }
     
     func initArray() {
@@ -85,6 +96,15 @@ class ExpenditureViewController: UIViewController {
         floatingExpendTotalLabelArray = [self.floatingExpenditureNameLabel,self.floatingExpenditureNameLabel1,self.floatingExpenditureNameLabel2,self.floatingExpenditureNameLabel3,self.floatingExpenditurePriceLabel,self.floatingExpenditurePriceLabel1,self.floatingExpenditurePriceLabel2,self.floatingExpenditurePriceLabel3]
         floatingExpendTotalFieldArray = [self.floatingExpenditureNameField,self.floatingExpenditureNameField1,self.floatingExpenditureNameField2,self.floatingExpenditureNameField3,self.floatingExpenditurePriceField,self.floatingExpenditurePriceField1,self.floatingExpenditurePriceField2,self.floatingExpenditurePriceField3]
         
+        wonLabelTotalArray = [self.wonLabel,self.wonLabel2,self.wonLabel3,self.wonLabel4,self.wonLabel5,self.wonLabel6,self.wonLabel7,self.wonLabel8,self.wonLabel9]
+    }
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
@@ -99,20 +119,50 @@ class ExpenditureViewController: UIViewController {
         if let switchButton = sender as? UISwitch{
             if !switchButton.isOn {
                 for textField in expenditureTotalFieldArray {
+                    textField.delegate = self
                     textField.isHidden = true
                 }
                 for label in expenditureTotalLabelArray {
                     label.isHidden = false
                 }
-               
+                
+                if !self.expenditureNameField.text!.isEmpty {
+                    self.expenditureNameLabel.text = self.expenditureNameField.text
+                }else{
+                    self.wonLabel.isHidden = true
+                }
+                if !self.expenditureNameField1.text!.isEmpty {
+                    self.expenditureNameLabel1.text = self.expenditureNameField1.text
+                }else{
+                    self.wonLabel2.isHidden = true
+                }
+                if !self.expenditureNameField2.text!.isEmpty {
+                   self.expenditureNameLabel2.text = self.expenditureNameField2.text
+                }else{
+                    self.wonLabel3.isHidden = true
+                }
+                if !self.expenditureNameField3.text!.isEmpty {
+                    self.expenditureNameLabel3.text = self.expenditureNameField3.text
+                }else{
+                    self.wonLabel4.isHidden = true
+                }
+                if !self.expenditureNameField4.text!.isEmpty {
+                    self.expenditureNameLabel4.text = self.expenditureNameField4.text
+                }else{
+                    self.wonLabel5.isHidden = true
+                }
+                
             }else{
                 for textField in expenditureTotalFieldArray {
+                    textField.delegate = self
                     textField.isHidden = false
                 }
                 for label in expenditureTotalLabelArray {
                     label.isHidden = true
                 }
-            
+                for wonLabel in wonLabelTotalArray {
+                    wonLabel.isHidden = false
+                }
             }
         }
         
@@ -127,12 +177,36 @@ class ExpenditureViewController: UIViewController {
                 for label in floatingExpendTotalLabelArray {
                     label.isHidden = false
                 }
+                if !self.floatingExpenditureNameField.text!.isEmpty {
+                    self.floatingExpenditureNameLabel.text = self.floatingExpenditureNameField.text
+                }else{
+                    self.wonLabel6.isHidden = true
+                }
+                if !self.floatingExpenditureNameField1.text!.isEmpty {
+                    self.floatingExpenditureNameLabel1.text = self.floatingExpenditureNameField1.text
+                }else{
+                    self.wonLabel7.isHidden = true
+                }
+                if !self.floatingExpenditureNameField2.text!.isEmpty {
+                    self.floatingExpenditureNameLabel2.text = self.floatingExpenditureNameField2.text
+                }else{
+                    self.wonLabel8.isHidden = true
+                }
+                if !self.floatingExpenditureNameField3.text!.isEmpty {
+                    self.floatingExpenditureNameLabel3.text = self.floatingExpenditureNameField3.text
+                }else{
+                    self.wonLabel9.isHidden = true
+                }
+
             }else{
                 for textField in floatingExpendTotalFieldArray {
                     textField.isHidden = false
                 }
                 for label in floatingExpendTotalLabelArray {
                     label.isHidden = true
+                }
+                for wonLabel in wonLabelTotalArray {
+                    wonLabel.isHidden = false
                 }
             }
         }
