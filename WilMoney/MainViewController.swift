@@ -13,10 +13,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let name = String(describing: CommonBottomTapView.self)
-//        guard let loadedNib = Bundle.main.loadNibNamed(name, owner: self, options: nil) else { return }
-//        guard let commonTapView = loadedNib.first as? CommonBottomTapView else { return }
-//        commonBottomTapView.addSubview(commonTapView)
     }
     
     @IBAction func monthButtonAction(_ sender: Any) {
@@ -26,14 +22,6 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(monthVC, animated: true)
         }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
