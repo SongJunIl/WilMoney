@@ -1,0 +1,6 @@
+framework module Pods_WilMoney {
+  umbrella header "Pods-WilMoney-umbrella.h"
+
+  export *
+  module * { export * }
+}

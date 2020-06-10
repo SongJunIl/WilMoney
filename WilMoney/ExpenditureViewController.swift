@@ -126,10 +126,12 @@ class ExpenditureViewController: UIViewController,UITextFieldDelegate {
             monthSelectVC.modalPresentationStyle = .fullScreen
             
             var money = 0
-          
+            var result : String = ""
             for label in totalPriceLabelArray{
+                result = label.text!
                 if label.text != ""{
-                    money += Int(label.text!)!
+                    result = result.replacingOccurrences(of: ",", with: "")
+                    money += Int(result)!
                 }
             }
             

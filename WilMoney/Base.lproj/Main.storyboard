@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUd-6d-7Wp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUd-6d-7Wp">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1167,6 +1167,50 @@
             </objects>
             <point key="canvasLocation" x="632.79999999999995" y="892.61083743842369"/>
         </scene>
+        <!--Holding Assets Detail View Controller-->
+        <scene sceneID="kQ8-E8-hke">
+            <objects>
+                <viewController storyboardIdentifier="HoldingAssetsDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ghT-DJ-xW7" customClass="HoldingAssetsDetailViewController" customModule="WilMoney" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jwo-AT-xny">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZ4-2y-gDq" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="94" width="343" height="634"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTU-re-jJG">
+                                <rect key="frame" x="16" y="64" width="43" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Qg6-TZ-poK"/>
+                                    <constraint firstAttribute="width" constant="43" id="eSN-Se-DZU"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrowshape.turn.up.left.2" catalog="system"/>
+                                <connections>
+                                    <action selector="backAction:" destination="ghT-DJ-xW7" eventType="touchUpInside" id="XUt-Ff-lvY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EZ4-2y-gDq" firstAttribute="leading" secondItem="Xdm-YR-OOR" secondAttribute="leading" constant="16" id="4Ni-ps-40j"/>
+                            <constraint firstItem="Xdm-YR-OOR" firstAttribute="bottom" secondItem="EZ4-2y-gDq" secondAttribute="bottom" constant="50" id="58b-kq-eon"/>
+                            <constraint firstItem="RTU-re-jJG" firstAttribute="top" secondItem="Xdm-YR-OOR" secondAttribute="top" constant="20" id="DHQ-TA-j2B"/>
+                            <constraint firstItem="Xdm-YR-OOR" firstAttribute="trailing" secondItem="EZ4-2y-gDq" secondAttribute="trailing" constant="16" id="Op7-xt-5G6"/>
+                            <constraint firstItem="EZ4-2y-gDq" firstAttribute="top" secondItem="Xdm-YR-OOR" secondAttribute="top" constant="50" id="UHQ-5f-m2B"/>
+                            <constraint firstItem="RTU-re-jJG" firstAttribute="leading" secondItem="Xdm-YR-OOR" secondAttribute="leading" constant="16" id="sa9-yY-HLW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xdm-YR-OOR"/>
+                    </view>
+                    <connections>
+                        <outlet property="pieChartView" destination="EZ4-2y-gDq" id="X72-yp-xk5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eP6-oj-JzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784.8" y="931.77339901477842"/>
+        </scene>
         <!--월별-->
         <scene sceneID="YEI-lS-li8">
             <objects>
@@ -1178,8 +1222,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzD-X1-Jle">
                                 <rect key="frame" x="16" y="84" width="343" height="654"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월별 용돈 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-l0-Wrc">
-                                        <rect key="frame" x="14" y="60" width="98" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월별 사용 가능 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-l0-Wrc">
+                                        <rect key="frame" x="14" y="60" width="131" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="yYz-oG-V0X"/>
                                         </constraints>
@@ -1187,31 +1231,31 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월별 저축 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXI-3Q-n18">
-                                        <rect key="frame" x="14" y="114" width="98" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월별 저축 가능 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXI-3Q-n18">
+                                        <rect key="frame" x="14" y="114" width="131" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukw-M7-6nn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukw-M7-6nn">
                                         <rect key="frame" x="140.66666666666663" y="60" width="171.33333333333337" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfn-bt-yO3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfn-bt-yO3">
                                         <rect key="frame" x="140.66666666666663" y="114" width="171.33333333333337" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월별 자산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS2-xL-4zj">
-                                        <rect key="frame" x="14" y="168" width="64" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월별 보유 자산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS2-xL-4zj">
+                                        <rect key="frame" x="14" y="168" width="98" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmh-ov-Otn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmh-ov-Otn">
                                         <rect key="frame" x="140.66666666666663" y="168" width="171.33333333333337" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1235,12 +1279,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NW-Ac-Kpg" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="232" width="343" height="417"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="9Wh-wH-JBj" firstAttribute="centerY" secondItem="Wmh-ov-Otn" secondAttribute="centerY" id="0DL-qp-RIb"/>
+                                    <constraint firstAttribute="trailing" secondItem="6NW-Ac-Kpg" secondAttribute="trailing" id="14d-TL-QN5"/>
                                     <constraint firstItem="ukw-M7-6nn" firstAttribute="height" secondItem="mdz-l0-Wrc" secondAttribute="height" id="2hv-F8-gu7"/>
                                     <constraint firstAttribute="trailing" secondItem="8qS-si-0lw" secondAttribute="trailing" constant="8" id="3Gr-rG-mJB"/>
+                                    <constraint firstItem="6NW-Ac-Kpg" firstAttribute="leading" secondItem="zzD-X1-Jle" secondAttribute="leading" id="3IM-nL-8Wc"/>
                                     <constraint firstItem="Wmh-ov-Otn" firstAttribute="centerY" secondItem="cS2-xL-4zj" secondAttribute="centerY" id="4J6-vL-S7r"/>
                                     <constraint firstItem="mdz-l0-Wrc" firstAttribute="leading" secondItem="zzD-X1-Jle" secondAttribute="leading" constant="14" id="5Hv-GD-ueG"/>
                                     <constraint firstItem="Wmh-ov-Otn" firstAttribute="width" secondItem="nfn-bt-yO3" secondAttribute="width" id="5Nk-AI-lA0"/>
@@ -1261,8 +1311,10 @@
                                     <constraint firstItem="8qS-si-0lw" firstAttribute="centerY" secondItem="nfn-bt-yO3" secondAttribute="centerY" id="Rkm-Ko-fWG"/>
                                     <constraint firstItem="fXI-3Q-n18" firstAttribute="height" secondItem="mdz-l0-Wrc" secondAttribute="height" id="TC7-Zy-ceB"/>
                                     <constraint firstItem="8qS-si-0lw" firstAttribute="leading" secondItem="nfn-bt-yO3" secondAttribute="trailing" constant="8" id="aSK-dI-ICX"/>
+                                    <constraint firstItem="6NW-Ac-Kpg" firstAttribute="top" secondItem="cS2-xL-4zj" secondAttribute="bottom" constant="20" id="d20-3V-4M9"/>
                                     <constraint firstAttribute="trailing" secondItem="bjw-92-fGe" secondAttribute="trailing" constant="8" id="g7w-FN-OTw"/>
                                     <constraint firstItem="bjw-92-fGe" firstAttribute="centerY" secondItem="ukw-M7-6nn" secondAttribute="centerY" id="tY6-og-zXj"/>
+                                    <constraint firstAttribute="bottom" secondItem="6NW-Ac-Kpg" secondAttribute="bottom" constant="5" id="tw0-5y-gx6"/>
                                     <constraint firstItem="ukw-M7-6nn" firstAttribute="centerY" secondItem="mdz-l0-Wrc" secondAttribute="centerY" id="uLy-sn-dw2"/>
                                 </constraints>
                             </view>
@@ -1280,6 +1332,7 @@
                     <navigationItem key="navigationItem" id="H8P-kS-Oum"/>
                     <connections>
                         <outlet property="extraMoneyLabel" destination="ukw-M7-6nn" id="LTc-c5-4Lg"/>
+                        <outlet property="lineChartView" destination="6NW-Ac-Kpg" id="7hm-zP-jZU"/>
                         <outlet property="monthlyAssetsLabel" destination="Wmh-ov-Otn" id="e2c-Nb-mlH"/>
                         <outlet property="savingMoneyLabel" destination="nfn-bt-yO3" id="ag0-oU-g8c"/>
                     </connections>
@@ -1329,6 +1382,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left.2" catalog="system" width="64" height="42"/>
         <image name="backArrow" width="11" height="20"/>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="doc.fill" catalog="system" width="56" height="64"/>

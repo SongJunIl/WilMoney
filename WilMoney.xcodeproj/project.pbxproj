@@ -3,15 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DDED143AB62DEE87039ED27 /* Pods_WilMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646CDBBA726A44531C4F59B6 /* Pods_WilMoney.framework */; };
 		FD7B9DAD241727E600C90D78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7B9DAC241727E600C90D78 /* AppDelegate.swift */; };
 		FD7B9DAF241727E600C90D78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7B9DAE241727E600C90D78 /* SceneDelegate.swift */; };
 		FD7B9DB4241727E600C90D78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7B9DB2241727E600C90D78 /* Main.storyboard */; };
 		FD7B9DB6241727E900C90D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7B9DB5241727E900C90D78 /* Assets.xcassets */; };
 		FD7B9DB9241727E900C90D78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7B9DB7241727E900C90D78 /* LaunchScreen.storyboard */; };
+		FD8C732F2488B78E00DD1204 /* HoldingAssetsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8C732E2488B78E00DD1204 /* HoldingAssetsDetailViewController.swift */; };
 		FDBC59DD2418C81900D49734 /* MyAssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC59DC2418C81900D49734 /* MyAssetsViewController.swift */; };
 		FDBC59DF2418DA5B00D49734 /* ExpenditureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC59DE2418DA5B00D49734 /* ExpenditureViewController.swift */; };
 		FDBC59E12419C6E500D49734 /* MonthSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC59E02419C6E500D49734 /* MonthSelectViewController.swift */; };
@@ -20,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		646CDBBA726A44531C4F59B6 /* Pods_WilMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WilMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D8F093E6EBE49478AD37FA3 /* Pods-WilMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilMoney.release.xcconfig"; path = "Target Support Files/Pods-WilMoney/Pods-WilMoney.release.xcconfig"; sourceTree = "<group>"; };
+		B26FC0FB9A41F083B22D0CF4 /* Pods-WilMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilMoney.debug.xcconfig"; path = "Target Support Files/Pods-WilMoney/Pods-WilMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		FD7B9DA9241727E600C90D78 /* WilMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WilMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7B9DAC241727E600C90D78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD7B9DAE241727E600C90D78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +32,7 @@
 		FD7B9DB5241727E900C90D78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD7B9DB8241727E900C90D78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD7B9DBA241727E900C90D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD8C732E2488B78E00DD1204 /* HoldingAssetsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingAssetsDetailViewController.swift; sourceTree = "<group>"; };
 		FDBC59DC2418C81900D49734 /* MyAssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAssetsViewController.swift; sourceTree = "<group>"; };
 		FDBC59DE2418DA5B00D49734 /* ExpenditureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureViewController.swift; sourceTree = "<group>"; };
 		FDBC59E02419C6E500D49734 /* MonthSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSelectViewController.swift; sourceTree = "<group>"; };
@@ -39,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDED143AB62DEE87039ED27 /* Pods_WilMoney.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01A6BED6EAE1069D435CBB08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B26FC0FB9A41F083B22D0CF4 /* Pods-WilMoney.debug.xcconfig */,
+				9D8F093E6EBE49478AD37FA3 /* Pods-WilMoney.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		919E510D80739529F723CFD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				646CDBBA726A44531C4F59B6 /* Pods_WilMoney.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD7B9DA0241727E600C90D78 = {
 			isa = PBXGroup;
 			children = (
 				FD7B9DAB241727E600C90D78 /* WilMoney */,
 				FD7B9DAA241727E600C90D78 /* Products */,
+				01A6BED6EAE1069D435CBB08 /* Pods */,
+				919E510D80739529F723CFD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,9 +93,9 @@
 				FDF22E872418ABFB003400E4 /* ViewController */,
 				FDF22E862418ABF7003400E4 /* View */,
 				FDF22E852418ABF1003400E4 /* Model */,
+				FD7B9DB2241727E600C90D78 /* Main.storyboard */,
 				FD7B9DAC241727E600C90D78 /* AppDelegate.swift */,
 				FD7B9DAE241727E600C90D78 /* SceneDelegate.swift */,
-				FD7B9DB2241727E600C90D78 /* Main.storyboard */,
 				FD7B9DB5241727E900C90D78 /* Assets.xcassets */,
 				FD7B9DB7241727E900C90D78 /* LaunchScreen.storyboard */,
 				FD7B9DBA241727E900C90D78 /* Info.plist */,
@@ -99,6 +125,7 @@
 				FDBC59E02419C6E500D49734 /* MonthSelectViewController.swift */,
 				FDBC59DE2418DA5B00D49734 /* ExpenditureViewController.swift */,
 				FDBC59DC2418C81900D49734 /* MyAssetsViewController.swift */,
+				FD8C732E2488B78E00DD1204 /* HoldingAssetsDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -110,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD7B9DBD241727E900C90D78 /* Build configuration list for PBXNativeTarget "WilMoney" */;
 			buildPhases = (
+				CEF515946F07FDD4A319D5A0 /* [CP] Check Pods Manifest.lock */,
 				FD7B9DA5241727E600C90D78 /* Sources */,
 				FD7B9DA6241727E600C90D78 /* Frameworks */,
 				FD7B9DA7241727E600C90D78 /* Resources */,
+				8E5F62BD936CFF11C800FD5F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,6 +198,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8E5F62BD936CFF11C800FD5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WilMoney/Pods-WilMoney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WilMoney/Pods-WilMoney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WilMoney/Pods-WilMoney-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEF515946F07FDD4A319D5A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WilMoney-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD7B9DA5241727E600C90D78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -178,6 +249,7 @@
 				FD7B9DAF241727E600C90D78 /* SceneDelegate.swift in Sources */,
 				FDBC59E12419C6E500D49734 /* MonthSelectViewController.swift in Sources */,
 				FDBC59DF2418DA5B00D49734 /* ExpenditureViewController.swift in Sources */,
+				FD8C732F2488B78E00DD1204 /* HoldingAssetsDetailViewController.swift in Sources */,
 				FDF22E932418BBB8003400E4 /* MonthDetailViewController.swift in Sources */,
 				FDF22E842418AB96003400E4 /* MainViewController.swift in Sources */,
 				FDBC59DD2418C81900D49734 /* MyAssetsViewController.swift in Sources */,
@@ -322,6 +394,7 @@
 		};
 		FD7B9DBE241727E900C90D78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B26FC0FB9A41F083B22D0CF4 /* Pods-WilMoney.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -340,6 +413,7 @@
 		};
 		FD7B9DBF241727E900C90D78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D8F093E6EBE49478AD37FA3 /* Pods-WilMoney.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
